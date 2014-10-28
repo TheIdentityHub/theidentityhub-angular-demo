@@ -25,9 +25,9 @@ var golfApp = angular.module("golfApp", ["ngRoute", "identityHub"])
     })
     .config(function (identityServiceProvider) {
         identityServiceProvider.config({
-            baseUrl: "YOUR BASE URL",
-            clientId: "YOUR CLIENT ID",
-            redirectUri: "YOUR REDIRECT URI",
+            baseUrl: "[YOUR BASE URL]",
+            clientId: "[YOUR CLIENT ID]",
+            redirectUri: "[YOUR APP BASE URL]/callback.html",
             popup: true,
             manualSignIn: true
     });

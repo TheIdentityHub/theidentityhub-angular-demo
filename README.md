@@ -8,7 +8,18 @@ Getting Started
 
 Download or Clone the repository. 
 
-Find the app.js file in the root folder
+Find the app.js file in the root folder and locate the following code fragment:
+
+'''''''js
+.config(function (identityServiceProvider) {
+        identityServiceProvider.config({
+            baseUrl: "[YOUR BASE URL]",
+            clientId: "[YOUR CLIENT ID]",
+            redirectUri: "[YOUR APP BASE URL]/callback.html",
+            popup: true,
+            manualSignIn: true
+    });
+'''''''
 
 Change the configuration of the 
 1. Replace [YOUR CLIENT ID] with the client id from your App configured in The Identity Hub.
