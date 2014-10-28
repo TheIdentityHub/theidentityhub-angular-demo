@@ -10,7 +10,7 @@ Download or Clone the repository.
 
 Find the app.js file in the root folder and locate the following code fragment:
 
-'''''''js
+````js
 .config(function (identityServiceProvider) {
         identityServiceProvider.config({
             baseUrl: "[YOUR BASE URL]",
@@ -19,7 +19,7 @@ Find the app.js file in the root folder and locate the following code fragment:
             popup: true,
             manualSignIn: true
     });
-'''''''
+````
 
 Change the configuration of the 
 1. Replace [YOUR CLIENT ID] with the client id from your App configured in The Identity Hub.
