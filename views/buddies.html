@@ -1,0 +1,14 @@
+﻿<section>
+    <div class="well" ng-repeat="buddy in buddies | filter:query">
+        <h2>{{buddy.displayName}}</h2>
+        <div>
+            <div style="display:inline-block">
+                <img src="{{buddy.largePictures[0]}}" />
+            </div>
+            <div style="display:inline-block;vertical-align:top;margin-left: 2em;">
+                <div>HCP: 34</div>
+                <div>Home Club: Golf Puyenbroek</div>
+            </div>
+        </div>
+    </div>
+</section>

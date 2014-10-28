@@ -1,0 +1,26 @@
+﻿<section>
+    <h1>{{account.displayName}}</h1>
+    <div class="well" ng-repeat="accountProvider in account.accountProviders | filter:query">
+        <div>
+            <h2 ng-hide="accountProvider.providerImageUrl">{{accountProvider.displayName}}</h2>
+            <div style="display:inline-block;max-height:8em;" ng-show="accountProvider.providerImageUrl">
+                <img style="max-height:6em;" src="{{accountProvider.providerImageUrl}}" />
+            </div>
+
+            <div style="margin-top:1em;">
+                <a class="btn btn-primary" ng-click="addAccount(accountProvider)">add account</a>
+            </div>
+        </div>
+        <div class="well" ng-repeat="account in accountProvider.accounts" style="margin-top:1em;margin-bottom:0">
+            <div>
+                <div style="display:inline-block">
+                    <img src="{{account.pictureUrl}}" />
+                </div>
+                <div style="display:inline-block;vertical-align:top;margin-left: 2em;">
+                    <h3 style="margin-top:0">{{account.displayName}}</h3>
+                    <div>{{account.emailAddress}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

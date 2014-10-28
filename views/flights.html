@@ -1,0 +1,22 @@
+﻿<section>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th ng-click="setSortOrder('date')">Date</th>
+                <th ng-click="setSortOrder('place.title')">Course</th>
+                <th ng-click="setSortOrder('place.city')">City</th>
+                <th ng-click="setSortOrder('place.data.email')">e-mail address</th>
+                <th>website</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="flight in flights | orderBy:sortOrder | filter:query">
+                <td>{{flight.date | date:'dd/MM/yyyy hh:mm'}}</td>
+                <td>{{flight.place.title}}</td>
+                <td>{{flight.place.city}}</td>
+                <td>{{flight.place.data.email}}</td>
+                <td><a href="{{flight.place.data.website}}" target="_blank">{{flight.place.data.website}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

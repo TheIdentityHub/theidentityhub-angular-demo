@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>The Identity Hub Demo</title>
+    <link href="bower_components/metro-bootstrap/dist/css/metro-bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="golfApp">
+    <div ng-controller="SignInController">
+        <section ng-cloak>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Golf Planner</a>
+                    </div><!-- /.navbar-header -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" ng-show="principal.isAuthenticated">
+                            <li><a href="#courses">Golf Courses</a></li>
+                            <li><a href="#flights">Booked Flights</a></li>
+                            <li><a href="#buddies">Golf buddies</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search" ng-show="principal.isAuthenticated">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search" ng-model="query">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#" ng-hide="principal.isAuthenticated" ng-click="signIn()">Sign in</a></li>
+                            <li><div ng-show="principal.isAuthenticated && principal.identity.smallPictures[0]" class="picture"><img src="{{principal.identity.smallPictures[0]}}" /></div></li>
+                            <li class="dropdown" ng-show="principal.isAuthenticated">
+                                <a class="dropdown-toggle" data-toggle="dropdown">{{principal.identity.displayName}} <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#account">Account</a></li>
+                                    <li class="divider"></li>
+                                    <li><a ng-click="signOut()">Sign out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </nav>
+            <section style="text-align:center;vertical-align:middle" ng-hide="principal.isAuthenticated">
+                <img style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);" src="content/Golf_ball_3.jpg" />
+            </section>
+            <section style="margin: 60px 30px 0 30px;" ng-show="principal.isAuthenticated">
+                <ng-view></ng-view>
+            </section>
+        </section>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-routing/angular-routing.js"></script>
+    <script src="bower_components/theidentityhub-angular/theidentityhub-angular.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="controllers/CoursesController.js"></script>
+    <script src="controllers/SignInController.js"></script>
+    <script src="controllers/FlightsController.js"></script>
+    <script src="controllers/BuddiesController.js"></script>
+    <script src="controllers/AccountController.js"></script>
+</body>
+</html>
