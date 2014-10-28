@@ -21,11 +21,12 @@ Find the app.js file in the root folder and locate the following code fragment:
     });
 ````
 
-Change the configuration of the 
+Change the configuration as follows
+
 1. Replace [YOUR CLIENT ID] with the client id from your App configured in The Identity Hub.
 2. Replace [YOUR BASE URL] with the url of your tenant on The Identity Hub.
 3. Replace [YOUR APP BASE URL] with the base url of your site. Configure the redirect uri in your OAUth 2.0 App parameters at The Identity Hub.
-3. Navigate to [YOUR APP BASE URL] the index.html page
+4. Navigate to [YOUR APP BASE URL] the index.html page
 
 If you do not have already created an App see https://www.theidentityhub.com/hub/Documentation/#CreateAnApp.
 
